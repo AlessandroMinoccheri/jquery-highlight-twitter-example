@@ -54,14 +54,10 @@ V 0.1.0
 								mouseY = Math.min(e.pageY - offset.top - 58);
 
 								var img= '<img id="img-share-twitter" src="' + o.image + '" alt="share on twitter" title="Share on Twitter" style="position:absolute; top: ' + mouseY + 'px;  left: ' + mouseX + 'px;">';
-								console.log(img);
 								if(obj.parent().hasClass('wrapped-highlight')){
-									console.log('relative');
 									obj.append(img);
-									console.log(obj.html());
 								}
 								else{
-									console.log('notrelative');
 									obj.wrap('<div style="position:relative;" class="wrapped-highlight"></div>').append(img);
 							    }
 							}
