@@ -1,0 +1,409 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.4.1 
+2010-03-01
+Author: Richard Clark - http://richclarkdesign.com
+*/
+
+
+@font-face {
+    font-family: 'UbuntuRegular';
+    src: url('../fonts/Ubuntu-R-webfont.eot');
+    src: url('../fonts/Ubuntu-R-webfont.eot?#iefix') format('embedded-opentype'),
+         
+         url('../fonts/Ubuntu-R-webfont.ttf') format('truetype'),
+         url('../fonts/Ubuntu-R-webfont.svg#UbuntuRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'UbuntuBoldRegular';
+    src: url('../fonts/Ubuntu-B-webfont.eot');
+    src: url('../fonts/Ubuntu-B-webfont.eot?#iefix') format('embedded-opentype'),
+        
+         url('../fonts/Ubuntu-B-webfont.ttf') format('truetype'),
+         url('../fonts/Ubuntu-B-webfont.svg#UbuntuRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@arancione:#fe8000;
+@verde_acqua: #5edd9c;
+@grigino:#cecece;
+@giallo:#feed01;
+@rossiccio:#8c1a06;
+
+.ombra_testo(@first,@second,@third, @color){
+	text-shadow: @first @second @third @color;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=@color, Direction=145, Strength=3);
+}
+
+.ombra_div(@first,@second,@third, @color){
+	-moz-box-shadow: @first @second @third @color;
+	-webkit-box-shadow: @first @second @third @color;
+	box-shadow: @first @second @third @color;
+}
+
+.transition(@property,@time){
+	transition-property: @property; /*standard*/
+    transition-duration: @time;
+ 
+	-webkit-transition-property: @property; /*Safari e Chrome */
+ 	-webkit-transition-duration: @time;
+         
+    -o-transition-property: @property;      /*Opera*/
+   	-o-transition-duration: @time;
+         
+    -moz-transition-property: @property;    /*Firefox*/
+    -moz-transition-duration: @time;	
+}
+
+.transition_bg_cl{
+    transition-property: color, background; /*standard*/
+    transition-duration: 0.4s;
+
+    -webkit-transition-property: color, background; /*Safari e Chrome */
+    -webkit-transition-duration: 0.4s;
+
+    -o-transition-property: color, background;      /*Opera*/
+    -o-transition-duration: 0.4s;
+
+    -moz-transition-property: color, background;    /*Firefox*/
+    -moz-transition-duration: 0.4s; 
+}
+
+.arrotondato(@radius){
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-khtml-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.border(@size,@color){
+	border: @size solid @color;
+}
+
+.sfondo{
+	background: -moz-linear-gradient(top, #c9c9c9, #7b7b7b);
+    /* Chrome, Safari:*/
+    background: -webkit-gradient(linear,
+                left top, left bottom, from(#c9c9c9), to(#7b7b7b));
+    /* MSIE */
+    filter: progid:DXImageTransform.Microsoft.Gradient(
+                StartColorStr='#c9c9c9', EndColorStr='#7b7b7b', GradientType=0);	
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, cite, code, em, img, q, small, strike, strong, sub, dl, dt, dd, ol, ul, li, fieldset, form, label, legend  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+body  {
+	line-height: 1;
+}
+blockquote, q  {
+	quotes: none;
+}
+ol, ul  {
+	list-style: none;
+}
+:focus  {
+	outline: 0;
+}
+
+/* ---------------- General Styles --------------- */
+body  {
+	font-family: UbuntuRegular;
+	font-size: 62.8%;
+	width: 100%;
+	height: 100%;
+/*background: #fff url(../img/bg.jpg);*/
+}
+
+a:link  {
+	text-decoration:none;
+}
+a:visited  {
+}
+a:hover, a:active, a:focus  {
+}
+
+h1{
+	font-size:24px;
+	line-height:16px;
+	color:#fff;
+}
+
+.link a{
+	color:#fff;
+	.transition(color,0.4s);
+}
+
+.link a:hover{
+	color:@arancione;
+}
+
+p, h1, h2, h3, h4 {
+	margin: 0;
+	padding: 5px 0 5px 0;
+	font-family: UbuntuRegular,Helvetica, sans-serif;
+}
+.skip, hr  {
+	position: absolute;
+	left: -9999px;
+}
+.clear {
+	clear: both;
+}
+.strong {
+	font-weight: bold;
+}
+.italic {
+	font-style: italic;
+}
+/* ---------------- Layout --------------- */
+.container {
+	width: 1000px; 
+	height: 100%;
+	margin: auto;
+	overflow: hidden;
+	top: 0;
+	bottom: 0;
+	left: 0; 
+	z-index: 2;
+}
+
+        .semiblock {
+            border: 1px solid black;
+            float: left;
+            margin: 0;
+            width: 198px;
+}
+
+
+.header {
+	
+}
+
+#navigation {
+	float:left;
+	width: 756px;
+	height: 40px;
+	margin-left:28px;
+	margin-top:25px;
+	text-align: center;
+}
+
+
+#box {
+border-radius: 28px; 
+-moz-border-radius: 28px; 
+-webkit-border-radius: 28px; 
+border: 5px solid #3B5998;
+}
+
+.c1{
+	background:#000;	
+}
+.c2{
+	background:#222;	
+}
+.c3{
+	background:#555;	
+}
+.c4{
+	background:#777;	
+}
+.c5{
+	background:#fff;	
+}
+
+
+#navigation li{
+	margin: 0;
+	width:126px;
+	height:40px;
+	padding-left:0px;
+	padding-right:0px;
+	list-style:none;
+	float:left;
+	
+	/* Mozilla: */
+    .sfondo;	
+	.transition(background,0.4s);
+}
+
+#navigation li:first-child{
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+#navigation li:hover{
+	background: -moz-linear-gradient(top, #696969, #404040);
+    /* Chrome, Safari:*/
+    background: -webkit-gradient(linear,
+                left top, left bottom, from(#696969), to(#404040));
+    /* MSIE */
+    filter: progid:DXImageTransform.Microsoft.Gradient(
+                StartColorStr='#696969', EndColorStr='#404040', GradientType=0);
+}
+
+#navigation li.actived{
+	background: -moz-linear-gradient(top, #696969, #404040);
+    /* Chrome, Safari:*/
+    background: -webkit-gradient(linear,
+                left top, left bottom, from(#696969), to(#404040));
+    /* MSIE */
+    filter: progid:DXImageTransform.Microsoft.Gradient(
+                StartColorStr='#696969', EndColorStr='#404040', GradientType=0);
+}
+
+#navigation a{
+	font-size:12px;
+	color:#fff;
+	text-decoration: none;
+	height:40px;
+	line-height:40px;
+	width:auto;
+	display: block;
+	.transition(color,0.4s);
+}
+
+.footer{
+	margin:0 auto 0 auto;
+	width:928px;
+	height:auto;
+	color:#a5a4a4;
+	font-size:10px;
+	font-weight:bold;
+	margin-top:0px;
+	padding-bottom:50px;
+}
+
+
+.menubar{
+width: 110px;
+background-color: #000000;
+margin-top: 32px;
+height: 35px;
+display: block;
+position: absolute;
+margin-left: -20px;
+vertical-align: middle;
+text-align: center;}
+
+.b_header{
+width: 110px;
+background: url('./img/b_header.gif');
+margin-left: -20px;
+height: 15px;
+position: inherit;
+margin-top: 0px;}
+
+/* ---------------- FORM CONTATTI --------------- */
+.inputNormal{
+	width:145px;background:#f0f0f0; border:1px solid #f0f0f0;padding:3px; color:#747474;
+}
+.inputError {
+	border: #cc0000 1px solid; color: #ff0000; background-color: #ffdcdc;padding:3px;width:215px;
+}
+.inputCheck {
+	border: #cc0000 1px solid; color: #ff0000; background-color: #ffdcdc;
+}
+.innerError {
+    padding-left: 0px;
+	padding-top:2px;
+	padding-left:10px;
+	color: #ff0000;
+	font-size:12px;
+}
+.submitter{
+	margin-top:18px;
+	margin-left:110px;
+	width:145px;
+	background:#8b1b07;
+	border:#8b1b07;
+	color:#fff;
+	padding:3px;
+	font-size:12px;
+	text-align:center;
+	cursor:pointer;
+	.transition(background,0.4s);
+}
+
+.submitter:hover{
+	background:#df2300;
+}
+
+.form-contatti{
+	text-align:left;
+	font-size:14px;
+	color:#747474;	
+}
+/* ---------------- FINE FORM CONTATTI --------------- */
+
+/* ---------------- OTHER --------------- */
+.clear {
+	clear: both;
+}
+.hidden {
+	visibility: hidden;
+}
+.loading {
+	width: 25px;
+	height: 25px;
+}
+
+.error {
+	font-size: 12px;
+	font-weight: bold;
+	display: none;
+}
+
+/* ---------------- FINE OTHER --------------- */
+
+.second{
+	 position: absolute;
+    border: solid;
+    top:0;
+    left:0;
+    z-index: 2;
+    height: 100%;
+    width: 1000px;
+    overflow: hidden;
+	background:url(../img/bg.jpg) no-repeat;
+			
+	transition-property: background-position; /*standard*/
+    transition-duration: 1s;
+ 
+	-webkit-transition-property: background-position; /*Safari e Chrome */
+ 	-webkit-transition-duration: 1s;
+         
+    -o-transition-property: background-position;      /*Opera*/
+   	-o-transition-duration: 1s;
+         
+    -moz-transition-property: background-position;    /*Firefox*/
+    -moz-transition-duration: 1s;	
+			
+}
+
+.hover {
+    background-position: 0 220px, 0 120px;
+}
+
+.meter-wrap, .meter-value, .meter-text {
+        width: 155px; height: 30px;
+}
+
+.meter-wrap, .meter-value {
+    background: #bdbdbd url(../img/wd_footer.png) top left no-repeat;
+}
